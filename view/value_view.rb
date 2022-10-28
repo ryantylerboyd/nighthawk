@@ -38,7 +38,7 @@ class ValueView
   def display_merch_results(results_values,items)
     out_the_door = []
     # results_values.each {|value| puts "#{items.find{|item| item.id == value.id }.name} | #{value.id} | #{value.profitmargin}"}
-    out_the_door << "#{string_formatter("item_name")} #{string_formatter("id")} #{string_formatter("profitmargin")} #{string_formatter("avgLowPrice")} #{string_formatter("avgHighPrice")}\n"
+    out_the_door << "#{string_formatter("ITEM NAME")} #{string_formatter("PROFIT MARGIN")} #{string_formatter("BUY PRICE")} #{string_formatter("SELL PRICE")}\n"
     puts out_the_door[0]
     results_values.sort_by!{|value| value.profitmargin}
     results_values.each do |value|
@@ -56,7 +56,7 @@ class ValueView
     end
     # out_the_door << "```"
     Dir["C:\Ruby30-x64\lib\ruby\gems\3.0.0\gems\net-ping-2.0.8\lib\net\*.rb"].each {|file| require file }
-    bot = Discordrb::Commands::CommandBot.new token: 'OTQ3MTYzMzQxNDM5MjYyODMx.GTi62_.cMbfR3B2tISyStxzoTgSjta8cZIx5WoLPI1aCs'
+    bot = Discordrb::Commands::CommandBot.new token: '---'
     message_out_box = "```"
     out_the_door.each do |line|
       if message_out_box.size < 1500
@@ -64,11 +64,13 @@ class ValueView
       else
         message_out_box << "```"
         bot.send_message(1035329374897045536,"#{message_out_box}")
+        bot.send_message(948901717938958397,"#{message_out_box}")
         message_out_box = "```"
       end
     end
     message_out_box << "```"
     bot.send_message(1035329374897045536,"#{message_out_box}")
+    bot.send_message(948901717938958397,"#{message_out_box}")
     message_out_box = "```"
   end
 

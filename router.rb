@@ -8,11 +8,17 @@ class Router
   def run
     puts "Welcome to nighthawk"
     puts "           --           "
-
-    while @running
-      display_tasks
-      action = gets.chomp.to_i
-      route_action(action)
+    counter = 0
+    while true
+    @value_controller.merch
+    sleep(305)
+    # while @running
+    #   display_tasks
+    #   action = gets.chomp.to_i
+    #   route_action(action)
+    # end
+    puts "[SYSTEM CYCLE] #{counter}"
+    counter += 1
     end
   end
 
