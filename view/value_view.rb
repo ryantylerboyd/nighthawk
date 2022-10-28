@@ -65,14 +65,14 @@ class ValueView
         message_out_box << "```"
         bot.send_message(1035329374897045536,"#{message_out_box}")# Private monitor
         bot.send_message(948901717938958397,"#{message_out_box}")# Death Tide
-        bot.send_message(948901717938958397,"#{message_out_box}")# AdamD#0660
+        bot.send_message(1035562238582460416,"#{message_out_box}")# AdamD#0660
         message_out_box = "```"
       end
     end
     message_out_box << "```"
     bot.send_message(1035329374897045536,"#{message_out_box}")# Private monitor
     bot.send_message(948901717938958397,"#{message_out_box}")# Death Tide
-    bot.send_message(948901717938958397,"#{message_out_box}")# AdamD#0660
+    bot.send_message(1035562238582460416,"#{message_out_box}")# AdamD#0660
     message_out_box = "```"
   end
 
