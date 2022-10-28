@@ -51,7 +51,7 @@ class ValueView
           end
         end
         puts "#{string_formatter(item_name.to_s)} #{string_formatter(value.id.to_s)} #{string_formatter(value.profitmargin.to_s)} #{string_formatter(value.avgLowPrice.to_s)} #{string_formatter(value.avgHighPrice.to_s)}"
-        out_the_door << "#{string_formatter(item_name.to_s)} #{string_formatter(value.profitmargin.to_s)} #{string_formatter(value.avgLowPrice.to_s)} #{string_formatter(value.avgHighPrice.to_s)}\n"
+        out_the_door << "#{string_formatter(item_name.to_s)} #{string_formatter(value.profitmargin.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)} #{string_formatter(value.avgLowPrice.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)} #{string_formatter(value.avgHighPrice.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)}\n"
       end
     end
     # out_the_door << "```"
