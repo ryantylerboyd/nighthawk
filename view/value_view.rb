@@ -41,7 +41,7 @@ class ValueView
   def display_merch_results(results_values,items,customer_repository)
     out_the_door = []
     # results_values.each {|value| puts "#{items.find{|item| item.id == value.id }.name} | #{value.id} | #{value.profitmargin}"}
-    out_the_door << "#{string_formatter("ITEM NAME")} #{string_formatter("PROFIT MARGIN")} #{string_formatter("BUY PRICE")} #{string_formatter("SELL PRICE")}\n"
+    out_the_door << "#{string_formatter("ITEM NAME")} #{string_formatter("BUY PRICE")} #{string_formatter("SELL PRICE")}  #{string_formatter("PROFIT MARGIN")}\n"
     puts out_the_door[0]
     results_values.sort_by!{|value| value.profitmargin}
     results_values.each do |value|
@@ -53,8 +53,8 @@ class ValueView
             item_name = item.name
           end
         end
-        puts "#{string_formatter(item_name.to_s)} #{string_formatter(value.profitmargin.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)} #{string_formatter(value.avgLowPrice.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)} #{string_formatter(value.avgHighPrice.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)}\n"
-        out_the_door << "#{string_formatter(item_name.to_s)} #{string_formatter(value.profitmargin.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)} #{string_formatter(value.avgLowPrice.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)} #{string_formatter(value.avgHighPrice.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)}\n"
+        puts "#{string_formatter(item_name.to_s)} #{string_formatter(value.avgLowPrice.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)} #{string_formatter(value.avgHighPrice.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)}  #{string_formatter(value.profitmargin.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)} \n"
+        out_the_door << "#{string_formatter(item_name.to_s)} #{string_formatter(value.avgLowPrice.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)} #{string_formatter(value.avgHighPrice.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)}  #{string_formatter(value.profitmargin.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)} \n"
       end
     end
     # out_the_door << "```"
