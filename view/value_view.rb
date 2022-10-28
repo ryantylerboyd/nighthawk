@@ -50,7 +50,7 @@ class ValueView
             item_name = item.name
           end
         end
-        puts "#{string_formatter(item_name.to_s)} #{string_formatter(value.id.to_s)} #{string_formatter(value.profitmargin.to_s)} #{string_formatter(value.avgLowPrice.to_s)} #{string_formatter(value.avgHighPrice.to_s)}"
+        puts "#{string_formatter(item_name.to_s)} #{string_formatter(value.profitmargin.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)} #{string_formatter(value.avgLowPrice.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)} #{string_formatter(value.avgHighPrice.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)}\n"
         out_the_door << "#{string_formatter(item_name.to_s)} #{string_formatter(value.profitmargin.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)} #{string_formatter(value.avgLowPrice.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)} #{string_formatter(value.avgHighPrice.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse)}\n"
       end
     end
@@ -63,14 +63,16 @@ class ValueView
         message_out_box << line
       else
         message_out_box << "```"
-        bot.send_message(1035329374897045536,"#{message_out_box}")
-        bot.send_message(948901717938958397,"#{message_out_box}")
+        bot.send_message(1035329374897045536,"#{message_out_box}")# Private monitor
+        bot.send_message(948901717938958397,"#{message_out_box}")# Death Tide
+        bot.send_message(948901717938958397,"#{message_out_box}")# AdamD#0660
         message_out_box = "```"
       end
     end
     message_out_box << "```"
-    bot.send_message(1035329374897045536,"#{message_out_box}")
-    bot.send_message(948901717938958397,"#{message_out_box}")
+    bot.send_message(1035329374897045536,"#{message_out_box}")# Private monitor
+    bot.send_message(948901717938958397,"#{message_out_box}")# Death Tide
+    bot.send_message(948901717938958397,"#{message_out_box}")# AdamD#0660
     message_out_box = "```"
   end
 
