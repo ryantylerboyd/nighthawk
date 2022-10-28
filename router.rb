@@ -22,6 +22,7 @@ class Router
     case action
     when 1 then @item_controller.list
     when 2 then @value_controller.merch
+    when 3 then @value_controller.test
   #   when 2 then @controller.create
   #   when 3 then @controller.destroy
   #   when 4 then @controller.search
@@ -41,6 +42,7 @@ class Router
     puts "What do you want to do next?"
     puts "1 - List all the items"
     puts "2 - Find Merch"
+    puts "3 - test"
     puts "6 - Stop and exit the program"
   end
 end

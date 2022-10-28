@@ -15,7 +15,7 @@ def open(url)
     Net::HTTP.get(URI.parse(url))
 end
 Dir["C:\Ruby30-x64\lib\ruby\gems\3.0.0\gems\net-ping-2.0.8\lib\net\*.rb"].each {|file| require file }
-bot = Discordrb::Commands::CommandBot.new token: 'OTQ3MTYzMzQxNDM5MjYyODMx.YhpQmg.70sXHkF69O5NOpyAfg7RmM5HWNg'
+bot = Discordrb::Commands::CommandBot.new token: 'OTQ3MTYzMzQxNDM5MjYyODMx.GTi62_.cMbfR3B2tISyStxzoTgSjta8cZIx5WoLPI1aCs'
 bot.send_message(discord_bot_broadcast,"```MERCH BOT IS NOW RUNNING #{Time.now}```")
 file = File.open("G:/ubtbubu/osrsmerching/itemdb_converted.txt")
 item_db= JSON.parse(file.read)

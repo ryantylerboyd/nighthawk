@@ -22,7 +22,7 @@ item_controller = ItemController.new(item_repository)
 # Value data base [Start] -->
 csv_file_value_database = File.join(__dir__, 'data/valuedb.csv')
 value_repository = ValueRepository.new(csv_file_value_database)
-value_controller = ValueController.new(value_repository)
+value_controller = ValueController.new(value_repository,item_repository)
 # Value data base [End] <--
 
 router = Router.new(item_controller,value_controller)
