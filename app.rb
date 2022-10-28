@@ -8,6 +8,11 @@ require_relative 'repository/value_repository'
 require_relative 'controller/value_controller'
 require_relative 'model/value'
 
+
+require_relative 'repository/customer_repository'
+require_relative 'controller/customer_controller'
+require_relative 'model/customer'
+
 require_relative 'router'
 # Dir["C:\Ruby30-x64\lib\ruby\gems\3.0.0\gems\net-ping-2.0.8\lib\net\*.rb"].each {|file| require file }
 # bot = Discordrb::Commands::CommandBot.new token: 'OTQ3MTYzMzQxNDM5MjYyODMx.YhpQmg.70sXHkF69O5NOpyAfg7RmM5HWNg'
@@ -19,10 +24,16 @@ item_repository = ItemRepository.new(csv_file_item_database)
 item_controller = ItemController.new(item_repository)
 # Item data base [End] <--
 
+# customer data base [Start] -->
+csv_file_customer_database = File.join(__dir__, 'data/customer.csv')
+customer_repository = CustomerRepository.new(csv_file_customer_database)
+customer_controller = CustomerController.new(customer_repository)
+# customer data base [End] <--
+
 # Value data base [Start] -->
 csv_file_value_database = File.join(__dir__, 'data/valuedb.csv')
 value_repository = ValueRepository.new(csv_file_value_database)
-value_controller = ValueController.new(value_repository,item_repository)
+value_controller = ValueController.new(value_repository,item_repository,customer_repository)
 # Value data base [End] <--
 
 router = Router.new(item_controller,value_controller)

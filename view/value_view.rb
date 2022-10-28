@@ -1,7 +1,10 @@
 require_relative '../model/value'
 require_relative '../model/item'
+require_relative '../model/customer'
 require_relative '../repository/item_repository'
 require_relative '../controller/item_controller'
+require_relative '../controller/customer_controller'
+require_relative '../repository/customer_repository'
 require 'discordrb'
 
 
@@ -35,7 +38,7 @@ class ValueView
   end
 
 
-  def display_merch_results(results_values,items)
+  def display_merch_results(results_values,items,customer_repository)
     out_the_door = []
     # results_values.each {|value| puts "#{items.find{|item| item.id == value.id }.name} | #{value.id} | #{value.profitmargin}"}
     out_the_door << "#{string_formatter("ITEM NAME")} #{string_formatter("PROFIT MARGIN")} #{string_formatter("BUY PRICE")} #{string_formatter("SELL PRICE")}\n"
@@ -63,16 +66,18 @@ class ValueView
         message_out_box << line
       else
         message_out_box << "```"
-        bot.send_message(1035329374897045536,"#{message_out_box}")# Private monitor
-        bot.send_message(948901717938958397,"#{message_out_box}")# Death Tide
-        bot.send_message(1035562238582460416,"#{message_out_box}")# AdamD#0660
+        customer_repository.each do |c|
+          bot.send_message(c.channel_id,"#{message_out_box}")
+          sleep(1)
+        end
         message_out_box = "```"
       end
     end
     message_out_box << "```"
-    bot.send_message(1035329374897045536,"#{message_out_box}")# Private monitor
-    bot.send_message(948901717938958397,"#{message_out_box}")# Death Tide
-    bot.send_message(1035562238582460416,"#{message_out_box}")# AdamD#0660
+    customer_repository.each do |c|
+      bot.send_message(c.channel_id,"#{message_out_box}")
+      sleep(1)
+    end
     message_out_box = "```"
   end
 
