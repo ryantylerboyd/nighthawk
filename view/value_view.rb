@@ -45,7 +45,7 @@ class ValueView
     puts out_the_door[0]
     results_values.sort_by!{|value| value.profitmargin}
     results_values.each do |value|
-      if value.highPriceVolume > 1 && value.lowPriceVolume > 1
+      if value.highPriceVolume > 2 && value.lowPriceVolume > 2
         item_name = items.find{ |item| item.id == value.id }
         item_name = item_name.name unless item_name.nil?
         items.each do |item|
@@ -59,7 +59,7 @@ class ValueView
     end
     # out_the_door << "```"
     Dir["C:\Ruby30-x64\lib\ruby\gems\3.0.0\gems\net-ping-2.0.8\lib\net\*.rb"].each {|file| require file }
-    bot = Discordrb::Commands::CommandBot.new token: '---'
+    bot = Discordrb::Commands::CommandBot.new token: 'OTQ3MTYzMzQxNDM5MjYyODMx.G9-lqE.5Abdr8kTp90RpwKTiYWrwys1V0UpaPRd53H780'
     message_out_box = "```"
     out_the_door.each do |line|
       if message_out_box.size < 1500

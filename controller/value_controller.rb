@@ -11,7 +11,7 @@ class ValueController # Handles the value information
       # Creates a new instance of view and saves it into the view instance variable
   end
   def merch
-    price = 25000
+    price = 20000
     # Sets the default price value. This is the smallest profit margin that will be processed.
     merch_results = @value_repository.merch_search(price)
     # sets the value of the merch search called from the value repository to the variable merch.
