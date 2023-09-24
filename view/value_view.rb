@@ -58,26 +58,27 @@ class ValueView
       end
     end
     # out_the_door << "```"
-    Dir["C:\Ruby30-x64\lib\ruby\gems\3.0.0\gems\net-ping-2.0.8\lib\net\*.rb"].each {|file| require file }
-    bot = Discordrb::Commands::CommandBot.new token: 'OTQ3MTYzMzQxNDM5MjYyODMx.G9-lqE.5Abdr8kTp90RpwKTiYWrwys1V0UpaPRd53H780'
-    message_out_box = "```"
-    out_the_door.each do |line|
-      if message_out_box.size < 1500
-        message_out_box << line
-      else
-        message_out_box << "```"
-        customer_repository.each do |c|
-          bot.send_message(c.channel_id,"#{message_out_box}")
-          sleep(1)
-        end
-        message_out_box = "```"
-      end
-    end
-    message_out_box << "```"
-    customer_repository.each do |c|
-      bot.send_message(c.channel_id,"#{message_out_box}")
-      sleep(1)
-    end
+    #
+    # Dir["C:\Ruby30-x64\lib\ruby\gems\3.0.0\gems\net-ping-2.0.8\lib\net\*.rb"].each {|file| require file }
+    # bot = Discordrb::Commands::CommandBot.new token: 'OTQ3MTYzMzQxNDM5MjYyODMx.G9-lqE.5Abdr8kTp90RpwKTiYWrwys1V0UpaPRd53H780'
+    # message_out_box = "```"
+    # out_the_door.each do |line|
+    #   if message_out_box.size < 1500
+    #     message_out_box << line
+    #   else
+    #     message_out_box << "```"
+    #     customer_repository.each do |c|
+    #       bot.send_message(c.channel_id,"#{message_out_box}")
+    #       sleep(1)
+    #     end
+    #     message_out_box = "```"
+    #   end
+    # end
+    # message_out_box << "```"
+    # customer_repository.each do |c|
+    #   bot.send_message(c.channel_id,"#{message_out_box}")
+    #   sleep(1)
+    # end
     message_out_box = "```"
   end
 
